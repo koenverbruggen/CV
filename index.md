@@ -1,7 +1,3 @@
----
-layout: cv
-title: Koen Verbruggen's CV
----
 # Koen Verbruggen
 Student Master Economics at Tilburg University
 
