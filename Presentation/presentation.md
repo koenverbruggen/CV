@@ -8,7 +8,7 @@ Introduction
 
 Overview
 ----------------
--  The Great Financial Crisis showed the ineectiveness of the LLRs.
+-  The Great Financial Crisis showed the weak points of the LLRs.
 -  Who should be the LLR and bank supervisor?
 -  Thornton (1802): The CB should be supervisor and LLR.
 -  Bagehot (1873)
@@ -38,7 +38,7 @@ L
 - At t = 1 a fraction of deposits,$v \in (0,1)$ is withdrawn. No possibility
 to sell assets, therefore need to lend from LLR.
 
-![](images/timeline.png)
+![](images/Timeline.png)
 
 LLR Decision
 ---------
@@ -92,7 +92,7 @@ Deposit insurer as LLR
 u\geq \bar{u}= \frac{L}{1+\gamma c}
 \end{equation}
 
-Optimal allocation of LLR powers
+Optimal allocation
 --------------------------------
 - $v$ is verifiable for society, possibility to calculate for each $v$ the allocation of the LLR to one of the two agencies that minimizes social cost.
 ![](images/Repullo2000DI.png)

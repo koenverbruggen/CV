@@ -112,7 +112,7 @@ h1,h2,h3,h4 {
 }
 
 h1 {
-	color: #fd9544;
+	color:#09c156;
 	text-align: left;
 	font-size: 3em;
 	line-height: 1em;
@@ -167,10 +167,11 @@ a:hover {
 #webaddress {
 	margin-top: 0em;
 	position: relative;
-  margin-left: 25%;
+  margin-left: 0%;
 	color: #aaa;
 	font-family: Menlo,monospace,sans-serif;
 	font-size: 80%;
+        text-align: left;
 }
 
 #webaddress a {
@@ -189,7 +190,10 @@ strong {
 #address {
 	display: none;
 }
-
+img[alt="Koen"] { 
+  max-width: 180px; 
+  display: block;
+}
 .footer {
     -webkit-column-count: 3; /* Chrome, Safari, Opera */
     -moz-column-count: 3; /* Firefox */
