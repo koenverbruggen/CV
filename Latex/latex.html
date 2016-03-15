@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Koen Verbruggen" />
+  <meta name="date" content="2016-02-29" />
+  <title>The Design of the Lender of Last Resort: A theoretical approach</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div id="header">
+<h1 class="title"><p>The Design of the Lender of Last Resort: A theoretical approach</p></h1>
+<h2 class="author">Koen Verbruggen<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h2>
+<h3 class="date">February 29, 2016</h3>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#sec:modelrepullo"><span class="toc-section-number">1</span> Repullo’s optimal allocation of LLR responsibilities</a><ul>
+<li><a href="#optimal-llr-policy"><span class="toc-section-number">1.1</span> Optimal LLR policy</a></li>
+<li><a href="#central-bank-as-llr"><span class="toc-section-number">1.2</span> Central bank as LLR</a></li>
+<li><a href="#deposit-insurance-corporation-as-llr"><span class="toc-section-number">1.3</span> Deposit insurance corporation as LLR</a></li>
+<li><a href="#optimal-allocation-of-llr-powers"><span class="toc-section-number">1.4</span> Optimal allocation of LLR powers</a></li>
+</ul></li>
+<li><a href="#mathematical-notes-repullo"><span class="toc-section-number">2</span> Mathematical notes Repullo</a></li>
+</ul>
+</div>
+<h1 id="sec:modelrepullo"><span class="header-section-number">1</span> Repullo’s optimal allocation of LLR responsibilities</h1>
+<p>In this section we are going to use the model of <span class="citation">Repullo (2000)</span> to address the optimal allocation of LLR responsibilities between a central bank and the DI. Besides this it is also discussed who should be in charge of bank supervision.</p>
+<p>The model consists of three periods. In period 1 a bank raises an amount of deposits normalized to 1. All these deposits are invested in an illiquid asset that yields a random return <span class="math inline">\(\widetilde{R}\)</span> at <span class="math inline">\(t=2\)</span>. Asymmetric information hinders that the assets can be sold at <span class="math inline">\(t=1\)</span>, although it is possible to liquidate the bank at <span class="math inline">\(t=1\)</span><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Deposits are fully insured by a DI and can be withdrawn at <span class="math inline">\(t=1\)</span> or <span class="math inline">\(t=2\)</span>.</p>
+<p>At <span class="math inline">\(t=1\)</span> a fraction of the deposits <span class="math inline">\(v \in (0,1)\)</span> are withdrawn. Since there is no market for the illiquid assets the bank is holding, it cannot sell these to pay out the withdrawals. Therefore it will be forced into liquidation unless it can borrow from the LLR. Two government agencies can fulfill the role of LLR. The central bank and the DI. To act as LLR the chosen agency is given supervision power to gather information about the assets of the bank. This leads to a signal <span class="math inline">\(u \in (0,1)\)</span> at <span class="math inline">\(t=1\)</span> that contains information about the expected return of the illiquid asset in period <span class="math inline">\(t=2\)</span>. This can be described as follows: <span class="math display">\[\label{eq:repulloreturn}
+  \widetilde{R}=\begin{cases}
+    0, &amp; \text{with probability 1-u}.\\
+    R, &amp; \text{with probability u}.
+  \end{cases}\]</span> where <span class="math inline">\(R&gt;1\)</span>.</p>
+<p>It is important to mention that <span class="math inline">\(u\)</span> is not publicly observed and therefore non-verifiable. It is only known to the supervisor who evaluates the bank. The two agencies both maximize their objective functions in which they care about their own expected final wealth net of bankruptcy costs in the event of a bank failure. The bankruptcy costs are denoted by <span class="math inline">\(c\)</span> and reflect administrative costs of closing the bank and negative externalities associated with a bank failure. The two agencies might have different views on supporting a bank or not. Two reasons exist for this difference: (1) the DI needs to compensate depositors if the bank fails, while the central bank does not have this liability and (2) the central bank and the DI have different fractions of the bankruptcy costs that they incur.</p>
+<h2 id="optimal-llr-policy"><span class="header-section-number">1.1</span> Optimal LLR policy</h2>
+<p>Starting with the benchmark case where <span class="math inline">\(u\)</span> is verifiable for everyone and no agency is therefore involved in doing research to find out what this value is. The expected return of the illiquid asset net of expected bankruptcy costs are compared with the liquidation value <span class="math inline">\(L\)</span> net of bankruptcy costs <span class="math inline">\(c\)</span>: <span class="math display">\[\label{eq:a}
+uR-(1-u)c \geq L-c\]</span></p>
+<p>If the expected return to the bank’s assets net of expected bankruptcy costs are bigger than the liquidation value net of optimal bankruptcy costs, it is optimal to provide liquidity. That is, if: <span class="math display">\[\label{optimalrepullo}
+u\geq u^*= L/(R+C)\]</span> If observed <span class="math inline">\(u\)</span> is equal to <span class="math inline">\(u^*\)</span>, both sides are equal and society is indifferent between saving the bank or letting it fail.</p>
+<h2 id="central-bank-as-llr"><span class="header-section-number">1.2</span> Central bank as LLR</h2>
+<p>Suppose the central bank is the LLR and after observing <span class="math inline">\(u\)</span> it has to decide to support the bank by lending funds equal to the amount of withdrawals or let it fail. In <span class="math inline">\(t=2\)</span> two situations can occur, one is that the realized return is <span class="math inline">\(R\)</span> and the central bank receives back the loan outstanding or <span class="math inline">\(R=0\)</span> and the central bank loses the amount <span class="math inline">\(v\)</span> and there is a bankruptcy cost. The central bank has the following cost function if it supports the bank: <span class="math display">\[(1-u)v+(1-u)\beta c\]</span> The cost if the central bank does not support the bank is simply <span class="math inline">\(\beta c\)</span>.</p>
+<p>The central bank will compare the two cost functions and the central bank will support the bank if: <span class="math display">\[\label{eq6}
+u\geq \hat{u}(v)=\frac{v}{v+\beta c}\]</span> The minimum <span class="math inline">\(u\)</span> for which the bank is granted loans depends on <span class="math inline">\(v\)</span>. <span class="math inline">\(\hat{u}\)</span> is increasing in the amount of withdrawals. In the optimal <span class="math inline">\(u^*\)</span> is compared to <span class="math inline">\(\hat{u}\)</span>.</p>
+<div class="figure">
+<img src="RepulloCB2000.png" alt="The central bank as LLR. Source: Repullo (2000)." width="302" />
+<p class="caption">The central bank as LLR. Source: <span class="citation">Repullo (2000)</span>.<span data-label="fig:RepCB"></span></p>
+</div>
+<p>This graph shows that to the left of <span class="math inline">\(\hat{v}\)</span> the central bank is too soft. It also supports banks for which a lower <span class="math inline">\(u\)</span> is observed than <span class="math inline">\(u^*\)</span>, to the right of <span class="math inline">\(\hat{v}\)</span> the central bank is too tough. the intuition behind this graph is quite straightforward. When the amount of withdrawals is very small the central bank has an incentive to support the bank, because if it does not the bank fails with probability 1 and the central bank incurs the bankruptcy cost <span class="math inline">\(\beta c\)</span>. If it supports the bank the expected costs if <span class="math inline">\(v\)</span> is very small are equal to <span class="math inline">\((1-u)\beta c\)</span>, obviously if <span class="math inline">\(v\)</span> is large the central bank takes on more risk and demands a higher <span class="math inline">\(u\)</span>.</p>
+<h2 id="deposit-insurance-corporation-as-llr"><span class="header-section-number">1.3</span> Deposit insurance corporation as LLR</h2>
+<p>Next we turn to the case where the DI acts as LLR. Again after observing the signal <span class="math inline">\(u\)</span> it has to decide whether to lend the bank the amount of withdrawals or let it fail. The biggest change is that the DI also takes into account the fact that in case of liquidation it has to pay <span class="math inline">\(1-v\)</span> to the remaining depositors and incurs a share <span class="math inline">\(\gamma\)</span> of the bankruptcy costs. This gives the following cost function when the DI supports the bank: <span class="math display">\[(1-u)(v+(1-v)+(1-u)\gamma c\]</span> On the other hand if the DI lets the bank go into bankruptcy, it also has to pay the deposits minus the liquidation value of the bank <span class="math inline">\(1-L\)</span>. So not supporting the bank gives the following cost function: <span class="math display">\[(1-L)+\gamma C\]</span> Again the LLR will support the bank if the cost of supporting are lower than letting it fail. That is, if: <span class="math display">\[\label{eq8}
+u\geq \bar{u}= \frac{L}{1+\gamma c}\]</span> <span class="math inline">\(\bar{u}\)</span> is the <span class="math inline">\(u\)</span> that makes the cost of both decisions equal. Comparing and it is easy to see that <span class="math inline">\(\bar{u}&gt;u^*\)</span> for every v, because <span class="math inline">\(R&gt;1\)</span> and <span class="math inline">\(c&gt;\gamma c\)</span>. So the DI is too tough for every amount of withdrawals. The choice of the DI is independent of the amount of withdrawals, this is because replacing fully insured deposits by a loan does not affect the liabilities of the DI. This can be seen in . In this figure it can easily be seen that for withdrawals lower than <span class="math inline">\(\bar{v}\)</span> the central bank is less tough than the DI. As the amount of withdrawals increases the expected losses of the central bank rise and eventually it becomes tougher than the DI. This can also be analytically solved by setting <span class="math inline">\(\hat{u}(v)=\bar{u}\)</span>. Giving the following critical value: <span class="math display">\[\label{eq9}
+\bar{v}= \frac{\beta cL}{1-L+\gamma c}\]</span></p>
+<h2 id="optimal-allocation-of-llr-powers"><span class="header-section-number">1.4</span> Optimal allocation of LLR powers</h2>
+<p>Since <span class="math inline">\(v\)</span> is observable for society it is possible to calculate for each <span class="math inline">\(v\)</span> the allocation of the LLR to one of the two agencies that minimizes the social costs, so that is most likely to make the same decision as the optimal case. By looking at it is clear that for <span class="math inline">\(v \in(\hat{v},\bar{v})\)</span> it is beneficial to give the central bank LLR responsibilities. Next to this if <span class="math inline">\(v&gt;\bar{v}\)</span> it is clear that allocating the LLR to the DI gives relatively better outcomes for society. However for <span class="math inline">\(v\in(0,\hat{v})\)</span> the outcome is ambiguous. Making the assumption that it is more likely to have values of <span class="math inline">\(u\)</span> above <span class="math inline">\(u^*\)</span> it is optimal to give for low values of withdrawals the LLR responsibility to the central bank, because than it is less costly to have a too soft LLR. The optimal policy than corresponds to the softer central bank decision. Under this condition we have shown that it is better to allocate LLR to the central bank for liquidity shocks smaller than <span class="math inline">\(\bar{v}\)</span>. Moreover the allocation of these responsibilities should be allocated to the agent that has to use it most often. mentions it is more likely that small shocks happen more often so the supervisory power should be allocated to the central bank and transferred to the DI during big liquidity shocks. Another interesting prediction by the model is that by looking at it is clear that <span class="math inline">\(\bar{v}\)</span> is increasing in <span class="math inline">\(c\)</span> (the bankruptcy costs) and <span class="math inline">\(\beta\)</span><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. If we consider that big banks have larger <span class="math inline">\(c\)</span>s and larger <span class="math inline">\(\beta\)</span>s, because the central bank cares more about the stability of the financial system. Also by looking at it is clear that <span class="math inline">\(\hat{u}(v)\)</span> would shift down. Result is that bigger banks are more likely to be saved, leading to a too big to fail result.</p>
+<div class="figure">
+<img src="Repullo2000DI.png" alt="Optimal allocation of LLR powers. Source: Repullo (2000)." width="302" />
+<p class="caption">Optimal allocation of LLR powers. Source: <span class="citation">Repullo (2000)</span>.<span data-label="fig:RepDI"></span></p>
+</div>
+<h1 id="mathematical-notes-repullo"><span class="header-section-number">2</span> Mathematical notes Repullo</h1>
+<p>To obtain the optimal allocation of LLR responsibilities the different welfare cost functions are compared and the optimal one is chose. The first welfare cost function when the central bank is LLR is shown in <span class="math display">\[\label{eqa1}
+\hat{L}(v)=\int_{u*}^{\hat{u}(v)}[u(R+c)-L]\mathrm{d}F(u)\]</span> Similarly the welfare cost of choosing the deposit insurance corporation as LLR is given by <span class="math display">\[\label{eqa2}
+\hat{L}(v)=\int_{u*}^{\bar{u}}[u(R+c)-L]\mathrm{d}F(u)\]</span></p>
+<div id="refs" class="references">
+<div id="ref-repullo2000">
+<p>Repullo, Rafael. 2000. “Who Should Act as Lender of Last Resort? An Incomplete Contracts Model.” <em>Journal of Money, Credit and Banking</em>. JSTOR, 580–605.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>MSc Economics student at Tilburg University. ANR: 459785, E-mail: <script type="text/javascript">
+<!--
+h='&#116;&#x69;&#108;&#98;&#x75;&#114;&#x67;&#x75;&#110;&#x69;&#118;&#x65;&#114;&#x73;&#x69;&#116;&#x79;&#46;&#x65;&#100;&#x75;';a='&#64;';n='&#x6b;&#46;&#108;&#46;&#112;&#46;&#118;&#x65;&#114;&#98;&#114;&#x75;&#x67;&#x67;&#x65;&#110;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x6b;&#46;&#108;&#46;&#112;&#46;&#118;&#x65;&#114;&#98;&#114;&#x75;&#x67;&#x67;&#x65;&#110;&#64;&#x75;&#118;&#116;&#46;&#110;&#108;'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x6b;&#46;&#108;&#46;&#112;&#46;&#118;&#x65;&#114;&#98;&#114;&#x75;&#x67;&#x67;&#x65;&#110;&#64;&#x75;&#118;&#116;&#46;&#110;&#108;&#32;&#40;&#x6b;&#46;&#108;&#46;&#112;&#46;&#118;&#x65;&#114;&#98;&#114;&#x75;&#x67;&#x67;&#x65;&#110;&#32;&#x61;&#116;&#32;&#116;&#x69;&#108;&#98;&#x75;&#114;&#x67;&#x75;&#110;&#x69;&#118;&#x65;&#114;&#x73;&#x69;&#116;&#x79;&#32;&#100;&#x6f;&#116;&#32;&#x65;&#100;&#x75;&#x29;</noscript>.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Other banks do not know the quality of the assets invested in, causing difficulties to sell them at their actual worth.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p><span class="math inline">\(\beta\)</span> is the share of this cost internalized by the central bank.<a href="#fnref3">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>

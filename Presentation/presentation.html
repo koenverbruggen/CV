@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Koen Verbruggen">
+  <title>The design of the LLR</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">The design of the LLR</h1>
+  <h2 class="author">Koen Verbruggen</h2>
+  <h3 class="date">Seminar Financial Economics, Tilburg University</h3>
+</section>
+<section id="TOC">
+<ul>
+<li><a href="#/introduction">Introduction</a></li>
+<li><a href="#/set-up-of-the-model">Set-up of the model</a></li>
+<li><a href="#/comparing-three-cases">Comparing three cases</a></li>
+<li><a href="#/conclusions">Conclusions</a></li>
+</ul>
+</section>
+
+<section><section id="introduction" class="titleslide slide level1"><h1>Introduction</h1></section><section id="overview" class="slide level2">
+<h1>Overview</h1>
+<ul>
+<li>The Great Financial Crisis showed the ineectiveness of the LLRs.</li>
+<li>Who should be the LLR and bank supervisor?</li>
+<li>Thornton (1802): The CB should be supervisor and LLR.</li>
+<li>Bagehot (1873)</li>
+<li>Only lend to solvent institutions</li>
+<li>Lending at a penalty rate</li>
+<li>Transparency about liquidity provision</li>
+</ul>
+</section><section id="but-what-about" class="slide level2">
+<h1>But what about</h1>
+<ul>
+<li>Moral hazard</li>
+<li>Constructive ambiguity</li>
+<li>Information asymmetry</li>
+<li>Systemic risk &amp; bailouts</li>
+<li>Deposit insurance</li>
+<li>Interbank market</li>
+</ul>
+</section></section>
+<section><section id="set-up-of-the-model" class="titleslide slide level1"><h1>Set-up of the model</h1></section><section id="repullo2000" class="slide level2">
+<h1>Repullo(2000)</h1>
+<ul>
+<li>Focuses on the optimal allocation of LLR responsibilities between a central bank and the DI.</li>
+<li>Three period model: t = 0 a bank raises an amount of deposits and invest them in an illiquid asset that yields a return <span class="math inline">\(\tilde{R}\)</span> at t = 2. Assets cannot be sold at t = 1, but possible to liquidate the bank with value L</li>
+<li>At t = 1 a fraction of deposits,<span class="math inline">\(v \in (0,1)\)</span> is withdrawn. No possibility to sell assets, therefore need to lend from LLR.</li>
+</ul>
+<figure>
+<img src="images/timeline.png" />
+</figure>
+</section><section id="llr-decision" class="slide level2">
+<h1>LLR Decision</h1>
+<ul>
+<li>Di or central bank has supervisory powers to gather information about assets of the bank.</li>
+<li>This leads to a signal:<span class="math inline">\(u \in (0,1)\)</span> at <span class="math inline">\(t=1\)</span>
+\begin{equation}\label{eq:repulloreturn}
+  \widetilde{R}=\begin{cases}
+0, &amp; \text{with probability 1-u}.\\
+R, &amp; \text{with probability u}.
+  \end{cases}
+\end{equation}</li>
+<li>Both agencies maximize their objective functions</li>
+</ul>
+</section></section>
+<section><section id="comparing-three-cases" class="titleslide slide level1"><h1>Comparing three cases</h1></section><section id="benchmark-optimal-policy" class="slide level2">
+<h1>Benchmark optimal policy</h1>
+<ul>
+<li>One step back, let <span class="math inline">\(u\)</span> be verifiable, so no agency needed to observe <span class="math inline">\(u\)</span>.</li>
+<li>Compare (expected) returns for society:
+\begin{equation}\label{eq:a}\tag{3.2}
+uR-(1-u)c \geq L-c
+\end{equation}</li>
+<li>If the left hand side is bigger, it is optimal for society to provide liquidity. That is, if:
+\begin{equation}\label{optimalrepullo}\tag{3.3}
+u\geq u^*= L/(R+c)
+\end{equation}</li>
+</ul>
+</section><section id="central-bank-as-llr" class="slide level2">
+<h1>Central Bank as LLR</h1>
+<ul>
+<li>Central bank cost function if it saves the bank, <span class="math inline">\(\beta\)</span>: bankruptcy cost central bank
+\begin{equation}\tag{3.4}
+(1-u)v+(1-u)\beta c
+\end{equation}</li>
+<li>Cost of not providing liquidity: <span class="math inline">\(\beta c\)</span></li>
+<li>Central bank compares cost functions and provides liquidity if:
+\begin{equation}\label{eq6}\tag{3.5}
+u\geq \hat{u}(v)=\frac{v}{v+\beta c}
+\end{equation}</li>
+<li><span class="math inline">\(\hat{u}(v)\)</span> is minimum <span class="math inline">\(u\)</span> that has to be observed to make the central bank better off by saving the bank.</li>
+</ul>
+</section><section id="deposit-insurer-as-llr" class="slide level2">
+<h1>Deposit insurer as LLR</h1>
+<ul>
+<li>Deposit insurer cost function if supporting the bank: <span class="math inline">\(\gamma\)</span> is bankruptcy costs for DI.
+\begin{equation}\tag{3.6}
+(1-u)(v+(1-v))+(1-u)\gamma c
+\end{equation}</li>
+<li>Not providing liquidity:
+\begin{equation}\tag{3.7}
+(1-L)+\gamma C
+\end{equation}</li>
+<li>Again comparing both cases results in a minimum <span class="math inline">\(u\)</span>:
+\begin{equation} \label{eq8}\tag{3.8}
+u\geq \bar{u}= \frac{L}{1+\gamma c}
+\end{equation}</li>
+</ul>
+</section><section id="optimal-allocation-of-llr-powers" class="slide level2">
+<h1>Optimal allocation of LLR powers</h1>
+<ul>
+<li><span class="math inline">\(v\)</span> is verifiable for society, possibility to calculate for each <span class="math inline">\(v\)</span> the allocation of the LLR to one of the two agencies that minimizes social cost. <img src="images/Repullo2000DI.png" /></li>
+</ul>
+</section></section>
+<section><section id="conclusions" class="titleslide slide level1"><h1>Conclusions</h1></section><section id="conclusions-1" class="slide level2">
+<h1>Conclusions</h1>
+<ul>
+<li>Making some assumptions: More likely to have values of <span class="math inline">\(u&gt;u^*\)</span> and small liquidity shocks happen more often.</li>
+<li>Give central bank supervisory powers and transfer to the deposit insurance corporation during the big liquidity shocks.</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
