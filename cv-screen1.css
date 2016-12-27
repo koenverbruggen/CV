@@ -60,7 +60,7 @@ body {
 	font-family: "Open sans", sans-serif;
 	margin-top: 1em;
 	margin-left: 1em;
-        background-color: #ffffcc
+        background-color: ##F5F3EE
 }
 
 p {
@@ -118,7 +118,7 @@ h1 {
 	font-size: 3em;
 	line-height: 1em;
 	position: relative;
-	margin-top: 2em;
+	margin-top: 1em;
 	left: 25%;
 	/* padding: .1rem 1rem; */
   text-shadow: 1px 1px #fff,
